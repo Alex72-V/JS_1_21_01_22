@@ -31,7 +31,71 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+   * Пользователь вводит переменные
+   * @param a - первое число
+   * @param b - второе число
+  */
+  const a = +prompt('Введите первое число');
+  const b = +prompt('Введите второе число');
+
+  /**
+   * Считает сумму введённых чисел
+   * @param a - первое число
+   * @param b - второе число
+   * @return - сумма чисел
+  */
+  function getSum(a, b) {
+    return (a + b);
+  }
+
+  /**
+   * Считает разность введённых чисел
+   * @param a - первое число
+   * @param b - второе число
+   * @return - разность большего и меньшего чисел
+  */
+  function getSub(a, b) {
+    if (a > b) {
+      return (a - b);
+    } else if (a < b) {
+      return (b - a);
+    } else {
+      return (0);
+    }
+  }
+
+  /**
+   * Перемножает введённые числа
+   * @param a - первое число
+   * @param b - второе число
+   * @return - результат перемножения чисел
+  */
+  function getMult(a, b) {
+    return (a * b);
+  }
+
+  /**
+   * Делит первое введённое число на второе
+   * @param a - первое число
+   * @param b - второе число
+   * @return - результат деления чисел
+  */
+  function getDiv(a, b) {
+    return (a / b);
+  }
+
+  // вызов функции из условия
+
+  console.log(getSum(2, 6)); // 8
+
+  // вызов функций с введёнными пользователем параметрами 
+
+  console.log(getSum(a, b));
+  console.log(getSub(a, b));
+  console.log(getMult(a, b));
+  console.log(getDiv(a, b));
+  
 </script>
 </body>
 </html>

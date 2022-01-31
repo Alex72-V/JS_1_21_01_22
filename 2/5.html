@@ -32,7 +32,92 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+   * Пользователь вводит переменные
+   * @param a - первое число
+   * @param b - второе число
+  */
+  const a = +prompt('Введите первое число');
+  const b = +prompt('Введите второе число');
+  const operation = prompt('Введите выражение ("+", "-", "*" или "/")');
+
+  /**
+   * Считает сумму введённых чисел
+   * @param a - первое число
+   * @param b - второе число
+   * @return - сумма чисел
+  */
+  function getSum(a, b) {
+    return (a + b);
+  }
+
+  /**
+   * Считает разность введённых чисел
+   * @param a - первое число
+   * @param b - второе число
+   * @return - разность большего и меньшего чисел
+  */
+  function getSub(a, b) {
+    if (a > b) {
+      return (a - b);
+    } else if (a < b) {
+      return (b - a);
+    } else {
+      return (0);
+    }
+  }
+
+  /**
+   * Перемножает введённые числа
+   * @param a - первое число
+   * @param b - второе число
+   * @return - результат перемножения чисел
+  */
+  function getMult(a, b) {
+    return (a * b);
+  }
+
+  /**
+   * Делит первое введённое число на второе
+   * @param a - первое число
+   * @param b - второе число
+   * @return - результат деления чисел
+  */
+  function getDiv(a, b) {
+    return (a / b);
+  }
+  /**
+   * Вычисляет значение переменной operation и в зависимости от него,
+   * вызывает одну из функций.
+   * @param a - первое число
+   * @param b - второе число
+   * @param operation - передаёт признак операции
+   * @return - вызывает функцию, выполняющую указанное выражение. При 
+   * некорректном значении выводит NaN.
+  */
+
+  function mathOperation(a, b, operation) {
+    switch (operation) {
+      case "+" :
+        return getSum(a, b);
+      case "-" :
+        return getSub(a, b);
+      case "*" :
+        return getMult(a, b);
+      case "/" :
+        return getDiv(a, b);
+      default:
+        return NaN;
+    }
+  }
+
+  // Вызов функции
+  console.log(mathOperation(a, b, operation));
+  
+  // Вызов функций из условия
+  console.log(mathOperation(5, 3, "+")); // 8
+  console.log(mathOperation(5, 3, ":)")); // NaN
+
 </script>
 </body>
 </html>
