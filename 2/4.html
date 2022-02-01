@@ -33,53 +33,52 @@
 
   /**
    * Пользователь вводит переменные
-   * @param a - первое число
-   * @param b - второе число
+   * @param {number} a - первое число
+   * @param {number} b - второе число
   */
   const a = +prompt('Введите первое число');
   const b = +prompt('Введите второе число');
 
   /**
    * Считает сумму введённых чисел
-   * @param a - первое число
-   * @param b - второе число
-   * @return - сумма чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @return {number} - сумма чисел
   */
   function getSum(a, b) {
-    return (a + b);
+    return a + b;
   }
 
   /**
    * Считает разность введённых чисел
-   * @param a - первое число
-   * @param b - второе число
-   * @return - разность большего и меньшего чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @return {number} - разность большего и меньшего чисел
   */
   function getSub(a, b) {
     if (a > b) {
-      return (a - b);
-    } else if (a < b) {
-      return (b - a);
-    } else {
-      return (0);
+      return a - b;
+    } if (a < b) {
+      return b - a;
+    } 
+      return 0;
     }
-  }
 
   /**
    * Перемножает введённые числа
-   * @param a - первое число
-   * @param b - второе число
-   * @return - результат перемножения чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @return {number} - результат перемножения чисел
   */
   function getMult(a, b) {
-    return (a * b);
+    return a * b;
   }
 
   /**
    * Делит первое введённое число на второе
-   * @param a - первое число
-   * @param b - второе число
-   * @return - результат деления чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @return {number} - результат деления чисел
   */
   function getDiv(a, b) {
     return (a / b);

@@ -21,15 +21,15 @@
 <script>
   "use strict";
 
-const a = +(prompt('Введите первое число'));
-const b = +(prompt('Введите второе число'));
+  const a = +prompt('Введите первое число');
+  const b = +prompt('Введите второе число');
 
-if (a >= 0 && b >= 0) {
-  console.log(`Разность чисел ${a - b}`);
-} else if (a < 0 && b < 0) {
-  console.log(`Произведение чисел ${a * b}`);
-} else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
-  console.log(`Сумма чисел ${a + b}`);
+  if (a > 0 && b > 0) {
+    console.log(`Разность чисел ${a - b}`);
+  } else if (a < 0 && b < 0) {
+    console.log(`Произведение чисел ${a * b}`);
+  } else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
+    console.log(`Сумма чисел ${a + b}`);
 }
 
 
