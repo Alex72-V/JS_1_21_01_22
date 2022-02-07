@@ -26,12 +26,14 @@
   }
 
   ProductES5.prototype.make25Discount = function() {
-    console.log(`Цена со скидкой 25% = ${this.price * 0.75}`);
+    this.price *= 0.75;
   }
 
   const productPrice = new ProductES5("Имбирь", 1000);
-  console.log(productPrice);
+  console.log(`Продукт: ${productPrice.name}  Цена: ${productPrice.price}`);
   productPrice.make25Discount();
+  console.log(`Продукт: ${productPrice.name}\
+  Цена со скидкой: ${productPrice.price}`);
 
   class ProductES6 {
     constructor(name, price) {
@@ -39,13 +41,15 @@
       this.price = price;
     }
     make25Discount() {
-      console.log(`Цена со скидкой 25% = ${this.price * 0.75}`);
+      this.price *= 0.75;
     }
   }
 
-  const productPrice1 = new ProductES5("Холодильник", 50000);
-  console.log(productPrice1);
+  const productPrice1 = new ProductES6("Холодильник", 50000);
+  console.log(`Продукт: ${productPrice1.name}  Цена: ${productPrice1.price}`);
   productPrice1.make25Discount();
+  console.log(`Продукт: ${productPrice1.name}\
+  Цена со скидкой: ${productPrice1.price}`);
 
 </script>
 </body>

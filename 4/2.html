@@ -50,7 +50,77 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function PostES5(name, text) {
+    this.name = name;
+    this.text = text;
+    this.date = new Date();
+  }
+  PostES5.prototype.edit = function(text) {
+    this.text = text;
+    this.date = new Date();
+  };
+
+  const post1 = new PostES5('Джо', 'Текст1');
+  console.log(post1);
+  post1.edit('Текст2');
+  console.log(post1);
+
+  function AttachedPostES5(name, text) {
+    PostES5.call(this, name, text);
+    this.highlighted = false;
+  }
+
+  AttachedPostES5.prototype = Object.create(PostES5.prototype);
+  AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+  AttachedPostES5.prototype.makeTextHighlighted = function() {
+    this.highlighted = true;
+    this.date = new Date();
+  };
+
+  const attachedPostES5 = new AttachedPostES5('Кеин', 'Текст3');
+  console.log(attachedPostES5);
+  attachedPostES5.makeTextHighlighted();
+  attachedPostES5.edit('Текст закреплённого поста');
+  console.log(attachedPostES5);
+
+
+  class PostES6 {
+    constructor(name, text) {
+      this.name = name;
+      this.text = text;
+      this.date = new Date();
+    }
+    edit(text) {
+      this.text = text;
+      this.date = new Date();
+    }
+  };
+
+  const post2 = new PostES6('Джо2', 'Текст1_2');
+  console.log(post2);
+  post2.edit('Текст2_2');
+  console.log(post2);
+
+  class AttachedPostES6 extends PostES6 {
+    constructor(name, text) {
+      super(name, text);
+    }
+
+    highlighted = false;
+
+    makeTextHighlighted() {
+      this.highlighted = true;
+      this.date = Date();
+    }
+  };
+
+  const attachedPostES6 = new AttachedPostES6('Кеин2', 'Текст3_2');
+  console.log(attachedPostES6);
+  attachedPostES6.makeTextHighlighted();
+  attachedPostES6.edit('Текст закреплённого поста2');
+  console.log(attachedPostES6);
+
 </script>
 </body>
 </html>
