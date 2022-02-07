@@ -31,7 +31,19 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  function sayNumber(number) {
+    if (number >= 0 && number < 1000 && number % 1 === 0) {
+      return {
+        units: number % 10,
+        dozens: Math.floor(number / 10) % 10,
+        hundreds: Math.floor(number / 100),
+      }
+    } else {
+      console.log(`Число ${number} не соответствует условию`);
+    }
+  }
+  console.log(sayNumber(+prompt('Введите целое число от 0 до 999')));
+
 </script>
 </body>
 </html>
