@@ -38,9 +38,8 @@
         dozens: Math.floor(number / 10) % 10,
         hundreds: Math.floor(number / 100),
       }
-    } else {
-      console.log(`Число ${number} не соответствует условию`);
-    }
+    } 
+    console.log(`Число ${number} не соответствует условию`);
   }
   console.log(sayNumber(+prompt('Введите целое число от 0 до 999')));
 
