@@ -33,27 +33,30 @@
   "super-dropdown", необходимо использовать методы forEach и querySelectorAll и
   свойство classList у элементов.
    */
-
+  const El = document.querySelectorAll('.dropdown-item');
+  El.forEach(el => el.classList.add('super-dropdown'));
 
   /*
   2. У элемента с классом btn необходимо убрать класс "btn-secondary", если он
   присутствует у этого элемента, либо добавить, если такого класса у элемента
   не было.
    */
-
+  const btnCl = document.querySelector('.btn');
+  btnCl.classList.toggle('btn-secondary');
 
   /*
   3. Необходимо удалить класс "dropdown-menu" у элемента, у которого
   присутствует класс "menu".
    */
-
+  document.querySelector('.menu').classList.remove('dropdown-menu');
 
   /*
   4. Используя метод insertAdjacentHTML добавьте после div'a с классом
   "dropdown" следующую разметку:
     <a href="#">link</a>
    */
-
+  const divDr = document.querySelector('div.dropdown');
+  divDr.insertAdjacentHTML('afterend', '<a href="#">link</a>');
 
   /*
   5. У элемента с id "dropdownMenuButton" замените id на "superDropdown".
