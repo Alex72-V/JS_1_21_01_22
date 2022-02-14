@@ -56,7 +56,7 @@
   1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все
   теги будут созданы браузером.
   */
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
     console.log('Все теги прогрузились');
   });
 
@@ -118,7 +118,7 @@
   7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
   */
   document.querySelectorAll('li:nth-child(2n)')
-  .forEach(el => el.style.backgroundColor = 'green');
+    .forEach(el => el.style.backgroundColor = 'green');
 
 </script>
 </body>
