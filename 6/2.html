@@ -66,6 +66,11 @@
   также должен меняться.
   */
 
+    const span = document.querySelector('span');
+
+    document.getElementById('from').addEventListener('input', event => {
+      span.textContent = event.target.value
+    });
 
   /*
   2. При клике на кнопку с классом messageBtn необходимо элементу с классом
@@ -73,7 +78,11 @@
   1) добавить два класса: animate__animated и animate__fadeInLeftBig
   2) поставить данному элементу стиль visibility в значение 'visible'.
    */
-
+    const clMessage = document.querySelector('.message');
+    document.querySelector('.messageBtn').addEventListener('click', () => {
+      clMessage.classList.add('animate__animated', 'animate__fadeInLeftBig');
+      clMessage.style.visibility='visible'
+    });
 
   /*
   3. Необходимо при отправке формы проверить, заполнены ли все поля в этой
@@ -86,8 +95,33 @@
   данному полю).
   Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
    */
+    const input1 = document.querySelector('input.form-control');
+    const select1 = document.querySelector('select');
+    const input0 = document.getElementById('from');
+    const form = document.querySelector('form');
+    const selInp = [input0, input1, select1];
 
+    selInp.forEach(el => el.classList.add('error'));
+    
+    document.addEventListener('submit', event => {
+      selInp.forEach(el => {
+        if (el.value === '') {
+          el.classList.add('error');
+          event.preventDefault();
+        }
+      })
+    });
 
+    document.addEventListener('input', event => {
+      selInp.forEach(el => {
+        if (el.value === '') {
+          el.classList.add('error')
+        } else {
+        el.classList.remove('error')
+        }
+      })
+    });
+    
 </script>
 </body>
 </html>
