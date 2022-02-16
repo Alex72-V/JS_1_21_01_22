@@ -40,13 +40,12 @@
   document.querySelector('.stars_container')
     .addEventListener('mouseover', event => {
       if (event.target.classList.contains('fas')) {
-      let star = event.target;
-      do {
-        star.classList.add('golden');
-        star = star.previousElementSibling;
-      } while (star);
+        let star = event.target;
+        do {
+          star.classList.add('golden');
+          star = star.previousElementSibling;
+        } while (star);
       }
-      return;
     });
 
   /*
@@ -57,12 +56,11 @@
   .addEventListener('mouseout', event => {
     if (event.target.classList.contains('fas')) {
       let star = event.target;
-    do {
-      star.classList.remove('golden');
-      star = star.previousElementSibling;
-    } while (star);
+      do {
+        star.classList.remove('golden');
+        star = star.previousElementSibling;
+      } while (star);
     }
-    return;
   });
 
   /*
@@ -74,7 +72,7 @@
 Звёзды - строчный элемент, между ними остаются пробелы. Чтобы это исправить,
 можно добавить свойство "display: flex" в div-контейнер.
 */
-document.querySelector('.stars_container').style.display='flex';
+document.querySelector('.stars_container').style.display = 'flex';
 
 </script>
 </body>
