@@ -47,7 +47,7 @@
 
   /*
   1. Необходимо сделать так, чтобы при клике на элемент с классом "nav-link",
-  данному элементу ставился класс "active", при этом у всхе других элементов с
+  данному элементу ставился класс "active", при этом у всех других элементов с
   классом nav-link данных элемент отсутствовал, необходимо использовать
   делегирование события.
   Также необходимо чтобы в div с классом text ставился нужный текст, который
@@ -60,6 +60,19 @@
     H99: "Однако, программирование, в итоге, принесет свои плоды.",
   };
 
+  let activeLink = document.querySelector('.active');
+  const textDiv = document.querySelector('div.text');
+  document.querySelector('.nav-tabs').addEventListener('click', event => {
+    if (!event.target.classList.contains('nav-link')) {
+      return;
+    }
+
+    activeLink.classList.remove('active');
+    event.target.classList.add('active');
+    activeLink = event.target;
+
+    textDiv.textContent = panelText[event.target.parentElement.dataset.text];
+  });
 
   /*
   2. Необходимо сделать так, чтобы при изменении input'а менялся и размер шрифта
@@ -67,7 +80,12 @@
   шрифт у текста, никакого резкого увеличения шрифта не должно быть при
   перетаскивании ползунка.
    */
-
+  const inDiv = document.getElementById('inputDiv');
+  const inEl = document.querySelector('input');
+  inEl.value = Number.parseInt(getComputedStyle(inDiv).fontSize);
+  inEl.addEventListener('input', event => {
+    inDiv.style.fontSize = `${event.target.value}px`;
+  })
 
 </script>
 </body>
