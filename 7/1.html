@@ -82,7 +82,7 @@
    */
   const inDiv = document.getElementById('inputDiv');
   const inEl = document.querySelector('input');
-  inEl.value = Number.parseInt(getComputedStyle(inDiv).fontSize);
+  inEl.value = Number.parseInt(getComputedStyle(inDiv).fontSize).toString();
   inEl.addEventListener('input', event => {
     inDiv.style.fontSize = `${event.target.value}px`;
   })
